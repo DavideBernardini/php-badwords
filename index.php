@@ -20,21 +20,17 @@
 </head>
 
 <body>
-    <h1>Elioconcentrato</h1>
-    <p>
-        <?php echo $text; ?>
-    </p>
-    <div>
-        <strong>Lunghezza testo:</strong> <?php echo strlen($text); ?>
-    </div>
-    <hr>
-    <h2>Elioconcentrato Censurato</h2>
-    <p>
-        <?php echo $textCensored; ?>
-    </p>
-    <div>
-        <strong>Lunghezza testo:</strong> <?php echo $textCensoredLeangth; ?>
-    </div>
+    <form>
+        <h1><?php echo str_replace(array($badWordLower, $badWordCapitalize, $badWordUpper), '<strong style="background-color: red; vertical-align: middle">***</strong>', 'Elioconcentrato'); ?></h1>
+        <input type="text" id="censura" name="censura" placeholder="Termine da censurare">
+        <button type="submit">Censura</button>
+        <p>
+            <?php echo $textCensored; ?>
+        </p>
+        <div>
+            <strong>Lunghezza testo:</strong> <?php echo $textCensoredLeangth; ?>
+        </div>
+    </form>
 </body>
 
 </html>
